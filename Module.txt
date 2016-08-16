@@ -1,0 +1,10 @@
+Name: Mod.Twilio
+AntiForgery: enabled
+Author: Orchardizer
+Website: https://github.com/Hazzamanic/orchardizer
+Version: 1.0
+OrchardVersion: 1.9.2
+Description: Description for the module
+Features:
+    Mod.Twilio:
+        Description: Description for feature Mod.Twilio.
