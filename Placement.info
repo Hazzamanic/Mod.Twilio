@@ -16,4 +16,6 @@
     <Place Parts_Common_Metadata="-"/>
   </Match>
 -->
+<Place Parts_TwilioSettingsPart="Content:2" />
+<Place Parts_TwilioSettingsPart_Edit="Content:5" />
 </Placement>

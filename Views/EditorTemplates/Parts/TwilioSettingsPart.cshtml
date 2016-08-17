@@ -1,0 +1,23 @@
+﻿@model Mod.Twilio.Models.TwilioSettingsPart
+
+<fieldset>
+    <legend></legend>
+    <div>
+        @Html.LabelFor(m => m.AccountSID, T("Account SID"))
+        @Html.EditorFor(m => m.AccountSID)
+        @Html.ValidationMessage("AccountSID", "*")
+		<span class="hint"></span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.AuthToken, T("Auth Token"))
+        @Html.EditorFor(m => m.AuthToken)
+        @Html.ValidationMessage("AuthToken", "*")
+		<span class="hint"></span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.FromNumber, T("From Number"))
+        @Html.EditorFor(m => m.FromNumber)
+        @Html.ValidationMessage("FromNumber", "*")
+		<span class="hint"></span>
+    </div>
+</fieldset>
