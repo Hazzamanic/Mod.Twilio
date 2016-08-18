@@ -117,12 +117,22 @@
       <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Orchard.Forms\Orchard.Forms.csproj">
+      <Project>{642A49D7-8752-4177-80D6-BFBBCFAD3DE0}</Project>
+      <Name>Orchard.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.Workflows\Orchard.Workflows.csproj">
+      <Project>{7059493C-8251-4764-9C1E-2368B8B485BC}</Project>
+      <Name>Orchard.Workflows</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\SmsActivity.cs" />
     <Compile Include="Drivers\TwilioSettingsPartDriver.cs" />
+    <Compile Include="Forms\SmsForm.cs" />
     <Compile Include="Handlers\TwilioSettingsPartHandler.cs" />
     <Compile Include="Models\TwilioSettingsPart.cs" />
     <Compile Include="Services\ITwilioService.cs" />

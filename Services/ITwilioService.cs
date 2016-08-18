@@ -2,27 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Mod.Twilio.Models;
 using Orchard;
+using Orchard.ContentManagement;
 using Twilio;
 
 namespace Mod.Twilio.Services {
     public interface ITwilioService : IDependency {
-        void SendSms();
+        void SendSms(string number, string message);
     }
 
     public class TwilioService : ITwilioService {
+        private readonly TwilioSettingsPart _twilioSettings;
 
+        public TwilioService(IOrchardServices orchardServices) {
+            //_twilioSettings = orchardServices.WorkContext.CurrentSite.As<TwilioSettingsPart>();
+        }
 
-        public void SendSms() {
+        public void SendSms(string number, string message) {
 
-            TwilioRestClient smsClient = new TwilioRestClient(twilioSettings.AccountSID, twilioSettings.AuthToken);
+            if(String.IsNullOrWhiteSpace(_twilioSettings.AccountSID))
+                return;
+
+            TwilioRestClient smsClient = new TwilioRestClient(_twilioSettings.AccountSID, _twilioSettings.AuthToken);
 
             try {
-                var msg = smsClient.SendSmsMessage(twilioSettings.FromNumber, number, context.MailMessage.Body);
-                Logger.Debug("Message sent to {0}: {1}", number, context.Type);
+                var msg = smsClient.SendMessage(_twilioSettings.FromNumber, number, message);
             }
             catch (Exception e) {
-                Logger.Error(e, "An unexpected error while sending a message to {0}: {1}", number, context.Type);
             }
         }
     }

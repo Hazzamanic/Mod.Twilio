@@ -10,7 +10,7 @@
     </div>
     <div>
         @Html.LabelFor(m => m.AuthToken, T("Auth Token"))
-        @Html.EditorFor(m => m.AuthToken)
+        @Html.TextBoxFor(m => m.AuthToken, new { type = "password", @class = "text medium" })
         @Html.ValidationMessage("AuthToken", "*")
 		<span class="hint"></span>
     </div>
