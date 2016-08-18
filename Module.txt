@@ -8,3 +8,7 @@ Description: Description for the module
 Features:
     Mod.Twilio:
         Description: Description for feature Mod.Twilio.
+		Name: Twilio
+	Mod.Twilio.Workflows:
+        Description: Description for feature Mod.Twilio.
+		Name: Twilio Workflows

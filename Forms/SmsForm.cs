@@ -9,7 +9,7 @@ using Orchard.Forms.Services;
 using Orchard.Localization;
 
 namespace Mod.Twilio.Forms {
-    [OrchardFeature("Orchard.Email.Workflows")]
+    [OrchardFeature("Mod.Twilio.Workflows")]
     public class SmsForm : Component, IFormProvider {
         protected dynamic New { get; set; }
 
@@ -27,12 +27,12 @@ namespace Mod.Twilio.Forms {
                             _Recipients: New.Textbox(
                                 Id: "recipients",
                                 Name: "Recipients",
-                                Title: T("Email Addresses"),
+                                Title: T("Phone Numbers"),
                                 Description: T("Specify a comma-separated list of recipient phone numbers"),
                                 Classes: new[] { "large", "text", "tokenized" }),
                             _Message: New.Textarea(
                                 Id: "Body", Name: "Body",
-                                Title: T("Body"),
+                                Title: T("Message"),
                                 Description: T("The body of the sms message."),
                                 Classes: new[] { "tokenized" })
                             ));
