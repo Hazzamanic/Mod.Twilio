@@ -9,10 +9,8 @@ using Mod.Twilio.Services;
 
 namespace Mod.Twilio.Drivers {
     public class TwilioSettingsPartDriver : ContentPartDriver<TwilioSettingsPart> {
-        private readonly ITwilioService _twilioService;
 
-        public TwilioSettingsPartDriver(ITwilioService twilioService) {
-            _twilioService = twilioService;
+        public TwilioSettingsPartDriver() {
         }
 
         protected override string Prefix {

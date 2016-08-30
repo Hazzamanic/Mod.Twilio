@@ -12,11 +12,11 @@ namespace Mod.Twilio.Services {
         void SendSms(string number, string message);
     }
 
-    public class TwilioService : ITwilioService {
+    public class TwilioService : Component, ITwilioService {
         private readonly TwilioSettingsPart _twilioSettings;
 
         public TwilioService(IOrchardServices orchardServices) {
-            //_twilioSettings = orchardServices.WorkContext.CurrentSite.As<TwilioSettingsPart>();
+            _twilioSettings = orchardServices.WorkContext.CurrentSite.As<TwilioSettingsPart>();
         }
 
         public void SendSms(string number, string message) {
@@ -28,6 +28,7 @@ namespace Mod.Twilio.Services {
 
             try {
                 var msg = smsClient.SendMessage(_twilioSettings.FromNumber, number, message);
+
             }
             catch (Exception e) {
             }
